@@ -7,6 +7,7 @@
 	<script type="text/javascript">
 		var COLS=26, ROWS=26;
 		var EMPTY=0, SNAKE=1, FRUIT=2;
+		var LEFT=0, UP=1, RIGHT=2, DOWN=3;
 		var grid = {
 			width : null,
 			height : null,
@@ -94,6 +95,13 @@
 	}
 
 	function init(){
+		grid.init(EMPTY,COLS,ROWS);
+
+		var sp ={x:Math.floor(COLS/2), y:ROWS-1};
+		snake.init(UP,sp.x,sp.y);
+		grid.set(SNAKE,sp.x,sp.y);
+
+		setFood();
 
 	}
 
